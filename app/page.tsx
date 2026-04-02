@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   useEffect(() => {
@@ -135,7 +136,7 @@ export default function Home() {
           ].map(({ tag, name, desc, file }, i) => (
             <div key={name} className={`product-card reveal delay-${(i % 3) + 1}`}>
               <div className="product-img">
-                <img src={`/${file}`} alt={name} />
+                <Image src={`/${file}`} alt={name} width={600} height={400} style={{width:"100%",height:"100%",objectFit:"cover"}} loading="lazy" />
               </div>
               <div className="product-body">
                 <div className="product-tag">{tag}</div>
@@ -182,7 +183,7 @@ export default function Home() {
             { n: "04", t: "Your Brand, Not Ours", p: "Private label packaging, swing tags and authenticity certificates from USD 250. On orders above USD 10,000, it's complimentary. Your clients see your name, not ours.", img: "/custom-branding.png" },
           ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
-              <img src={img} alt={t} className="perk-card-img" />
+              <Image src={img} alt={t} width={600} height={300} className="perk-card-img" style={{width:"100%",objectFit:"cover"}} loading="lazy" />
               <span className="perk-num">{n}</span>
               <h3>{t}</h3>
               <p>{p}</p>
@@ -283,7 +284,7 @@ export default function Home() {
           {[...Array(2)].map((_, d) =>
             ["/logo1.png","/logo2.png","/logo3.png","/logo4.png","/logo5.png","/logo6.png","/logo8.png","/logo9.png"].map((src) => (
               <div key={`${d}-${src}`} className="logo-item">
-                <img src={src} alt="Partner" className="logo-img" />
+                <Image src={src} alt="Partner" width={160} height={60} className="logo-img" style={{objectFit:"contain"}} loading="lazy" />
               </div>
             ))
           )}
