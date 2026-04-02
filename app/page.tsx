@@ -127,7 +127,7 @@ export default function Home() {
         </div>
         <div className="products-grid">
           {[
-            { tag: "Signature Collection", name: "Rugs", desc: "Hand-knotted and hand-tufted in natural wool, jute and cotton. Each rug is a considered object — not a fill-in. The kind of piece that anchors a room and earns its place.", file: "rugs.png" },
+            { tag: "Signature Collection", name: "Rugs", desc: "Handmade with natural and recycled materials — wool, jute and cotton, chosen for how they feel as much as how they last. Each rug is a considered object, not a fill-in. The kind of piece that anchors a room and earns its place.", file: "rugs.png" },
             { tag: "Accent Seating", name: "Poufs", desc: "Lightweight, tactile and quietly essential. The kind of piece that makes a room feel deliberately lived in — not just decorated.", file: "poufs.png" },
             { tag: "Wall Stories", name: "Wall Art", desc: "Woven, sculpted and formed by hand — not printed, not mass-produced. Pieces that bring the same intention to your walls as you bring to the rest of the space.", file: "wall-art.png" },
             { tag: "Soft Furnishings", name: "Pillows", desc: "Hand-embroidered and block-printed by artisans who treat every piece as a finished object. The detail your clients will reach for first.", file: "pillows.png" },
@@ -177,10 +177,10 @@ export default function Home() {
         </div>
         <div className="perks-grid">
           {[
-            { n: "01", t: "Logistics, Handled", p: "From the atelier to the project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces move on your timeline.", img: "/logistic.png" },
-            { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our in-house studio before it ships — at no extra cost. Editorial-quality images your clients will respond to, ready for presentations, proposals and mood boards.", img: "/product-photography.png" },
-            { n: "03", t: "The Story Behind the Piece", p: "Artisan profiles, production footage, factory context — the kind of provenance that gives your sourced pieces depth. Clients who understand how something was made value it differently.", img: "/content.png" },
-            { n: "04", t: "Your Name on Everything", p: "Present under your studio brand entirely. Custom packaging, swing tags and authenticity certificates — your clients experience the work as completely yours. Your name. Your story. Not ours.", img: "/custom-branding.png" },
+            { n: "01", t: "Logistics, Handled", p: "From our atelier to your project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces arrive on your timeline, not ours.", img: "/logistic.png" },
+            { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our studio before it ships — at no extra cost. Presentation-ready images for proposals, mood boards and client decks. No chasing. No waiting.", img: "/product-photography.png" },
+            { n: "03", t: "The Story Behind Every Piece", p: "Artisan profiles, process footage, origin context — the provenance that turns a sourced piece into a conversation. Clients who know how something was made value it differently. So do theirs.", img: "/content.png" },
+            { n: "04", t: "Your Name on Everything", p: "Present entirely under your studio brand. Custom packaging, swing tags and authenticity certificates — your clients experience your curation, your eye, your standards. We stay invisible, by design.", img: "/custom-branding.png" },
           ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
               <Image src={img} alt={t} width={600} height={300} className="perk-card-img" style={{width:"100%",objectFit:"cover"}} loading="lazy" />
@@ -204,10 +204,10 @@ export default function Home() {
           <div className="reveal-right">
             <div className="sustain-pillars">
               {[
-                { n: "1", t: "Responsible Materials", d: "Natural wool, cotton, jute, denim and viscose — each selected for quality, provenance and integrity. Nothing we use is chosen by default." },
-                { n: "2", t: "Fair Artisan Wages", d: "Every maker in our network earns above a fair living wage. We are GPTW certified — one of the very few manufacturers in our industry who can say that." },
-                { n: "3", t: "Considered Production", d: "Waste reduction and responsible water use are built into our operations from day one — not retrofitted as a marketing afterthought." },
-                { n: "4", t: "Full Transparency", d: "We invite factory visits and hold an open-door inspection policy at every stage. You should know exactly where your pieces come from. So should your clients." },
+                { n: "1", t: "Responsible Materials", d: "Natural wool, cotton, jute, denim and viscose — each selected for quality, provenance and integrity. Nothing we use is chosen by default. Nothing is here to fill a brief cheaply." },
+                { n: "2", t: "Fair Artisan Wages", d: "Every maker in our network earns above a fair living wage. We are GPTW certified — one of very few manufacturers in this industry who can say that, and mean it." },
+                { n: "3", t: "Considered Production", d: "Waste reduction and responsible water use are built into our operations from day one — not retrofitted as a sustainability footnote when it became fashionable." },
+                { n: "4", t: "Full Transparency", d: "We invite factory visits and hold an open-door inspection policy at every stage. You should know exactly where your pieces come from. So should your clients — especially the ones who ask." },
               ].map(({ n, t, d }) => (
                 <div key={n} className="pillar">
                   <div className="pillar-icon" style={{ fontFamily: "'Playfair Display',serif", fontSize: "18px", fontWeight: 700, color: "rgba(196,160,120,0.9)" }}>{n}</div>
@@ -231,6 +231,7 @@ export default function Home() {
             { q: "Can my clients see my brand, not yours?", a: "That is the point of our private label programme. Custom packaging, swing tags and authenticity certificates let your clients experience the work as entirely yours. Available from USD 250 — and complimentary on orders above USD 10,000." },
             { q: "What materials do you work with?", a: "Natural wool, cotton, jute, denim and viscose — selected for quality, sustainability and the way they feel in hand. For bespoke projects where the brief calls for something specific, we can source and evaluate materials outside our standard range." },
             { q: "Can we visit the factory or inspect production?", a: "We welcome it. Our factories operate an open-door policy at every stage — and we actively encourage partners and their clients to come and see how the work is made. If you prefer third-party inspection, we will facilitate it without friction." },
+            { q: "Do you work with studios based outside India?", a: "Yes — and it is a growing part of how we work. We partner with studios across the Middle East, Southeast Asia, the Pacific and beyond. Freight, customs documentation and delivery coordination are handled on our end. Tell us where your project site is and we will map the logistics for you." },
           ].map(({ q, a }, i) => (
             <div key={q} className={`faq-item reveal delay-${Math.min(i + 1, 5)}`} onClick={(e) => toggleFaq(e.currentTarget)}>
               <div className="faq-q">{q}<div className="faq-icon">+</div></div>
