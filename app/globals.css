@@ -65,7 +65,7 @@ nav.scrolled .nav-links a:hover{color:#2c1810}
 .stat{text-align:center;padding:48px 20px;border-right:1px solid rgba(255,255,255,0.08);position:relative;overflow:hidden;transition:background 0.4s}
 .stat:last-child{border-right:none}
 .stat:hover{background:rgba(196,160,120,0.06)}
-.stat-num{font-family:'Playfair Display',serif;font-size:52px;color:#fff;font-weight:700;line-height:1;display:block;margin-bottom:10px}
+.stat-num,.stat-text{font-family:'Playfair Display',serif;font-size:52px;color:#fff;font-weight:700;line-height:1;display:block;margin-bottom:10px}
 .stat-label{font-size:11px;color:rgba(196,160,120,0.8);letter-spacing:0.14em;text-transform:uppercase;font-weight:500}
 .stat-sub{font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px;font-weight:300;display:block}
 

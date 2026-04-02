@@ -106,10 +106,10 @@ export default function Home() {
       {/* STATS */}
       <div className="stats">
         <div className="stats-inner">
-          <div className="stat reveal delay-1"><span className="stat-num" data-target="1" data-suffix="+">0+</span><span className="stat-label">Year of Crafting Purposeful Spaces</span></div>
-          <div className="stat reveal delay-2"><span className="stat-num" data-target="50" data-suffix="+">0+</span><span className="stat-label">Interior Designers & Architects Partnered</span></div>
-          <div className="stat reveal delay-3"><span className="stat-num" data-target="30" data-suffix="+">0+</span><span className="stat-label">Design Projects Completed</span></div>
-          <div className="stat reveal delay-4"><span className="stat-num" data-target="15" data-suffix="+">0+</span><span className="stat-label">Signature Collections Launched</span></div>
+          <div className="stat reveal delay-1"><span className="stat-num" data-target="50" data-suffix="+">0+</span><span className="stat-label">Architects & Interior Studios Partnered</span></div>
+          <div className="stat reveal delay-2"><span className="stat-num" data-target="30" data-suffix="+">0+</span><span className="stat-label">Residential & Commercial Projects Delivered</span></div>
+          <div className="stat reveal delay-3"><span className="stat-num stat-text">Custom</span><span className="stat-label">Orders Accepted for Bespoke Project Needs</span></div>
+          <div className="stat reveal delay-4"><span className="stat-num stat-text">Trade</span><span className="stat-label">Pricing Available for Registered Design Professionals</span></div>
         </div>
       </div>
 
