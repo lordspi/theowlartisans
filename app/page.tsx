@@ -3,17 +3,38 @@ import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
-    // Navbar scroll
     const navbar = document.getElementById("navbar");
     const onScroll = () => navbar?.classList.toggle("scrolled", window.scrollY > 60);
     window.addEventListener("scroll", onScroll);
 
-    // Reveal on scroll
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
       { threshold: 0.12 }
     );
     document.querySelectorAll(".reveal,.reveal-left,.reveal-right").forEach((el) => observer.observe(el));
+
+    // Counter animation
+    const counters = document.querySelectorAll(".stat-num[data-target]");
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target as HTMLElement;
+        const target = parseInt(el.dataset.target || "0");
+        const suffix = el.dataset.suffix || "";
+        let start = 0;
+        const duration = 1800;
+        const step = (timestamp: number) => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach((el) => countObserver.observe(el));
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -60,7 +81,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" id="home">
-        <div className="hero-bg" style={{ backgroundImage: "url('/hero.jpg')" }} />
+        <div className="hero-bg" style={{ backgroundImage: "url('/hero.png')" }} />
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-eyebrow"><span></span>Exclusively for Interior Designers &amp; Architects</div>
@@ -91,11 +112,10 @@ export default function Home() {
       {/* STATS */}
       <div className="stats">
         <div className="stats-inner">
-          <div className="stat reveal delay-1"><span className="stat-num">2025</span><span className="stat-label">Founded</span></div>
-          <div className="stat reveal delay-2"><span className="stat-num">4+</span><span className="stat-label">Countries</span></div>
-          <div className="stat reveal delay-3"><span className="stat-num">50+</span><span className="stat-label">Interior Studios</span></div>
-          <div className="stat reveal delay-4"><span className="stat-num">200+</span><span className="stat-label">Containers Shipped</span></div>
-          <div className="stat reveal delay-5"><span className="stat-num">0</span><span className="stat-label">Minimum Order</span><span className="stat-sub">Always &amp; forever</span></div>
+          <div className="stat reveal delay-1"><span className="stat-num" data-target="2025" data-suffix="">0</span><span className="stat-label">Founded</span></div>
+          <div className="stat reveal delay-2"><span className="stat-num" data-target="4" data-suffix="+">0+</span><span className="stat-label">Countries</span></div>
+          <div className="stat reveal delay-3"><span className="stat-num" data-target="50" data-suffix="+">0+</span><span className="stat-label">Interior Studios</span></div>
+          <div className="stat reveal delay-4"><span className="stat-num" data-target="200" data-suffix="+">0+</span><span className="stat-label">Containers Shipped</span></div>
         </div>
       </div>
 
@@ -113,12 +133,12 @@ export default function Home() {
         </div>
         <div className="products-grid">
           {[
-            { tag: "Signature Collection", name: "Rugs", desc: "Handmade rugs with natural & recycled materials — each one a floor-bound work of art.", file: "rugs.jpg" },
-            { tag: "Accent Seating", name: "Poufs", desc: "Lightweight seating with an artistic touch — the perfect accent for any curated corner.", file: "poufs.jpg" },
-            { tag: "Wall Stories", name: "Wall Art", desc: "Ditch cheap prints. Elevated wall decor crafted with texture, depth and intention.", file: "wall-art.jpg" },
-            { tag: "Soft Furnishings", name: "Pillows", desc: "Throw pillows that elevate every couch, chair, and daybed to something worth photographing.", file: "pillows.jpg" },
-            { tag: "Ambient Light", name: "Artisanal Lighting", desc: "Decorative lamps like you've never seen before — organic materials, extraordinary form.", file: "lighting.jpg" },
-            { tag: "Functional Art", name: "Benches", desc: "Rugs turned into handcrafted benches — sculptural seating that earns its place in any room.", file: "benches.jpg" },
+            { tag: "Signature Collection", name: "Rugs", desc: "Handmade rugs with natural & recycled materials — each one a floor-bound work of art.", file: "rugs.png" },
+            { tag: "Accent Seating", name: "Poufs", desc: "Lightweight seating with an artistic touch — the perfect accent for any curated corner.", file: "poufs.png" },
+            { tag: "Wall Stories", name: "Wall Art", desc: "Ditch cheap prints. Elevated wall decor crafted with texture, depth and intention.", file: "wall-art.png" },
+            { tag: "Soft Furnishings", name: "Pillows", desc: "Throw pillows that elevate every couch, chair, and daybed to something worth photographing.", file: "pillows.png" },
+            { tag: "Ambient Light", name: "Artisanal Lighting", desc: "Decorative lamps like you've never seen before — organic materials, extraordinary form.", file: "lighting.png" },
+            { tag: "Functional Art", name: "Benches", desc: "Rugs turned into handcrafted benches — sculptural seating that earns its place in any room.", file: "benches.png" },
           ].map(({ tag, name, desc, file }, i) => (
             <div key={name} className={`product-card reveal delay-${(i % 3) + 1}`}>
               <div className="product-img">
@@ -165,12 +185,13 @@ export default function Home() {
         </div>
         <div className="perks-grid">
           {[
-            { n: "01", t: "Logistics, Your Way", p: "Our dedicated shipping team secures the best freight rates and practices. We work with your nominated forwarders too — because your order should move exactly how you want it to." },
-            { n: "02", t: "Professional Photography", p: "Great product photography shouldn't cost extra. Our in-house studio produces e-commerce-ready images for everything you order — at no additional charge." },
-            { n: "03", t: "Content & Storytelling", p: "Process videos, behind-the-scenes factory tours, artisan profiles — rich content that brings your sourcing story to life on social media and client decks." },
-            { n: "04", t: "Custom Branding", p: "Your clients buy your brand — not ours. Get custom packaging, swing tags and certificates of authenticity starting at just USD 250. Free on all orders above USD 10,000." },
-          ].map(({ n, t, p }, i) => (
+            { n: "01", t: "Logistics, Your Way", p: "Our dedicated shipping team secures the best freight rates and practices. We work with your nominated forwarders too — because your order should move exactly how you want it to.", img: "/logistic.png" },
+            { n: "02", t: "Professional Photography", p: "Great product photography shouldn't cost extra. Our in-house studio produces e-commerce-ready images for everything you order — at no additional charge.", img: "/product-photography.png" },
+            { n: "03", t: "Content & Storytelling", p: "Process videos, behind-the-scenes factory tours, artisan profiles — rich content that brings your sourcing story to life on social media and client decks.", img: "/content.png" },
+            { n: "04", t: "Custom Branding", p: "Your clients buy your brand — not ours. Get custom packaging, swing tags and certificates of authenticity starting at just USD 250. Free on all orders above USD 10,000.", img: "/custom-branding.png" },
+          ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
+              <img src={img} alt={t} className="perk-card-img" />
               <span className="perk-num">{n}</span>
               <h3>{t}</h3>
               <p>{p}</p>
@@ -243,7 +264,8 @@ export default function Home() {
 
       {/* ORDER FORM */}
       <section className="order" id="order-now">
-        <div className="order-inner reveal">
+        <div className="order-bg" style={{ backgroundImage: "url('/behind-form.png')" }} />
+        <div className="order-inner reveal" style={{ position: "relative", zIndex: 1 }}>
           <div className="section-tag">Get in Touch</div>
           <h2>Get a Quote</h2>
           <p className="order-sub">Tell us about your project and we&apos;ll respond with a personalised curation within 24 hours.</p>
@@ -274,9 +296,9 @@ export default function Home() {
       <div className="logo-scroller">
         <div className="logo-track">
           {[...Array(2)].map((_, d) =>
-            ["Studio Logo", "Partner Studio", "Design House", "Architecture Co.", "Interior Studio", "Creative Atelier"].map((name) => (
-              <div key={`${d}-${name}`} className="logo-item">
-                <div className="logo-placeholder"><div className="logo-dot" /><div className="logo-text-el">{name}</div></div>
+            ["/logo1.png","/logo2.png","/logo3.png","/logo4.png","/logo5.png","/logo6.png","/logo8.png","/logo9.png"].map((src) => (
+              <div key={`${d}-${src}`} className="logo-item">
+                <img src={src} alt="Partner" className="logo-img" />
               </div>
             ))
           )}
