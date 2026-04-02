@@ -180,7 +180,7 @@ export default function Home() {
             { n: "01", t: "Logistics, Handled", p: "From the atelier to the project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces move on your timeline.", img: "/logistic.png" },
             { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our in-house studio before it ships — at no extra cost. Editorial-quality images your clients will respond to, ready for presentations, proposals and mood boards.", img: "/product-photography.png" },
             { n: "03", t: "The Story Behind the Piece", p: "Artisan profiles, production footage, factory context — the kind of provenance that gives your sourced pieces depth. Clients who understand how something was made value it differently.", img: "/content.png" },
-            { n: "04", t: "Your Name on Everything", p: "Present under your studio brand entirely. Custom packaging, swing tags and authenticity certificates are available from USD 250 — and complimentary on orders above USD 10,000. Your client sees your name. Not ours.", img: "/custom-branding.png" },
+            { n: "04", t: "Your Name on Everything", p: "Present under your studio brand entirely. Custom packaging, swing tags and authenticity certificates — your clients experience the work as completely yours. Your name. Your story. Not ours.", img: "/custom-branding.png" },
           ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
               <Image src={img} alt={t} width={600} height={300} className="perk-card-img" style={{width:"100%",objectFit:"cover"}} loading="lazy" />
