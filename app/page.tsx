@@ -95,9 +95,9 @@ export default function Home() {
 
       {/* SOURCING */}
       <section className="sourcing reveal" id="about">
-        <div className="section-tag">Direct from the Factory</div>
-        <h2>Your Clients Deserve<br />the Real Thing.</h2>
-        <p>Most sourcing chains involve four intermediaries before a piece reaches your project. We remove all of them — giving you factory-direct access, honest pricing, and complete creative control.</p>
+        <div className="section-tag">A Different Kind of Sourcing Partner</div>
+        <h2>Your Studio Deserves<br />Better Than a Catalogue.</h2>
+        <p>Most suppliers hand you a price list and a minimum order. We do neither. The Owl Artisans was built specifically for designers and architects who need creative flexibility, honest pricing, and a maker they can actually stand behind — without the layers in between.</p>
         <div className="sourcing-ctas">
           <a href="#perks" className="btn-text">See how it works <span>→</span></a>
         </div>
@@ -106,10 +106,10 @@ export default function Home() {
       {/* STATS */}
       <div className="stats">
         <div className="stats-inner">
-          <div className="stat reveal delay-1"><span className="stat-num" data-target="2025" data-suffix="">0</span><span className="stat-label">Founded</span></div>
-          <div className="stat reveal delay-2"><span className="stat-num" data-target="4" data-suffix="+">0+</span><span className="stat-label">Countries</span></div>
-          <div className="stat reveal delay-3"><span className="stat-num" data-target="50" data-suffix="+">0+</span><span className="stat-label">Interior Studios</span></div>
-          <div className="stat reveal delay-4"><span className="stat-num" data-target="200" data-suffix="+">0+</span><span className="stat-label">Containers Shipped</span></div>
+          <div className="stat reveal delay-1"><span className="stat-num" data-target="1" data-suffix="+">0+</span><span className="stat-label">Year of Crafting Purposeful Spaces</span></div>
+          <div className="stat reveal delay-2"><span className="stat-num" data-target="50" data-suffix="+">0+</span><span className="stat-label">Interior Designers & Architects Partnered</span></div>
+          <div className="stat reveal delay-3"><span className="stat-num" data-target="30" data-suffix="+">0+</span><span className="stat-label">Design Projects Completed</span></div>
+          <div className="stat reveal delay-4"><span className="stat-num" data-target="15" data-suffix="+">0+</span><span className="stat-label">Signature Collections Launched</span></div>
         </div>
       </div>
 
@@ -122,17 +122,17 @@ export default function Home() {
       <section className="products" id="products">
         <div className="products-header reveal">
           <div className="section-tag">Our Collections</div>
-          <h2>Six Categories.<br />Infinite Possibilities.</h2>
-          <p>Each piece is made by hand, by people who have spent their lives perfecting a single craft. No shortcuts. No compromises. Just work that holds up in the spaces your clients will never stop talking about.</p>
+          <h2>Handcrafted Objects for<br />Spaces That Mean Something.</h2>
+          <p>Six categories. Every piece made by hand, by artisans who have spent a lifetime mastering a single discipline. These are not products — they are the result of craft traditions refined over generations, made for the spaces your clients will remember long after the project is complete.</p>
         </div>
         <div className="products-grid">
           {[
-            { tag: "Signature Collection", name: "Rugs", desc: "Hand-knotted and hand-tufted in New Zealand wool, jute and cotton. Each rug is a considered object — not a commodity.", file: "rugs.png" },
-            { tag: "Accent Seating", name: "Poufs", desc: "Lightweight, tactile and endlessly versatile. The kind of piece that makes a room feel lived in — deliberately.", file: "poufs.png" },
-            { tag: "Wall Stories", name: "Wall Art", desc: "Woven, sculpted and crafted — not printed. Pieces that give your walls the same attention you give everything else.", file: "wall-art.png" },
-            { tag: "Soft Furnishings", name: "Pillows", desc: "Hand-embroidered and block-printed. The finishing detail that separates a good room from a great one.", file: "pillows.png" },
-            { tag: "Ambient Light", name: "Artisanal Lighting", desc: "Natural fibre and handformed metal pendants that cast the kind of light no catalogue piece ever could.", file: "lighting.png" },
-            { tag: "Functional Art", name: "Benches", desc: "Solid wood and handwoven upholstery. Furniture that earns a second look — and a third.", file: "benches.png" },
+            { tag: "Signature Collection", name: "Rugs", desc: "Hand-knotted and hand-tufted in natural wool, jute and cotton. Each rug is a considered object — not a fill-in. The kind of piece that anchors a room and earns its place.", file: "rugs.png" },
+            { tag: "Accent Seating", name: "Poufs", desc: "Lightweight, tactile and quietly essential. The kind of piece that makes a room feel deliberately lived in — not just decorated.", file: "poufs.png" },
+            { tag: "Wall Stories", name: "Wall Art", desc: "Woven, sculpted and formed by hand — not printed, not mass-produced. Pieces that bring the same intention to your walls as you bring to the rest of the space.", file: "wall-art.png" },
+            { tag: "Soft Furnishings", name: "Pillows", desc: "Hand-embroidered and block-printed by artisans who treat every piece as a finished object. The detail your clients will reach for first.", file: "pillows.png" },
+            { tag: "Ambient Light", name: "Artisanal Lighting", desc: "Natural fibre and hand-formed metal pendants. The light they cast is warm, specific and entirely their own — something no catalogue piece ever achieves.", file: "lighting.png" },
+            { tag: "Functional Art", name: "Benches", desc: "Solid wood frames and handwoven upholstery — built to carry weight in every sense. Furniture that commands a room without announcing itself.", file: "benches.png" },
           ].map(({ tag, name, desc, file }, i) => (
             <div key={name} className={`product-card reveal delay-${(i % 3) + 1}`}>
               <div className="product-img">
@@ -172,15 +172,15 @@ export default function Home() {
       <section className="perks" id="perks">
         <div className="perks-header reveal">
           <div className="section-tag">What We Bring to the Table</div>
-          <h2>Every Partnership<br />Includes This.</h2>
-          <p>We built The Owl Artisans around how design professionals actually work — not how suppliers assume they do.</p>
+          <h2>Built for How Design<br />Professionals Actually Work.</h2>
+          <p>Every studio relationship we build comes with this — not as an add-on, not as a negotiation. This is the standard. Because designers and architects who trust us with their projects deserve more than a production partner.</p>
         </div>
         <div className="perks-grid">
           {[
-            { n: "01", t: "Logistics, Handled", p: "From factory floor to project site — we coordinate freight, customs and last-mile delivery. We work with your nominated forwarders too. Your order moves your way.", img: "/logistic.png" },
-            { n: "02", t: "Photography Included", p: "Every piece you order is photographed in our in-house studio at no extra cost. Editorial-quality images, ready for your presentations and client decks.", img: "/product-photography.png" },
-            { n: "03", t: "Content & Provenance", p: "Factory tours, artisan profiles, process footage — rich content that gives your sourced pieces a story worth telling. Your clients will appreciate the authenticity.", img: "/content.png" },
-            { n: "04", t: "Your Brand, Not Ours", p: "Private label packaging, swing tags and authenticity certificates from USD 250. On orders above USD 10,000, it's complimentary. Your clients see your name, not ours.", img: "/custom-branding.png" },
+            { n: "01", t: "Logistics, Handled", p: "From the atelier to the project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces move on your timeline.", img: "/logistic.png" },
+            { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our in-house studio before it ships — at no extra cost. Editorial-quality images your clients will respond to, ready for presentations, proposals and mood boards.", img: "/product-photography.png" },
+            { n: "03", t: "The Story Behind the Piece", p: "Artisan profiles, production footage, factory context — the kind of provenance that gives your sourced pieces depth. Clients who understand how something was made value it differently.", img: "/content.png" },
+            { n: "04", t: "Your Name on Everything", p: "Present under your studio brand entirely. Custom packaging, swing tags and authenticity certificates are available from USD 250 — and complimentary on orders above USD 10,000. Your client sees your name. Not ours.", img: "/custom-branding.png" },
           ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
               <Image src={img} alt={t} width={600} height={300} className="perk-card-img" style={{width:"100%",objectFit:"cover"}} loading="lazy" />
@@ -197,17 +197,17 @@ export default function Home() {
         <div className="sustain-inner">
           <div className="sustain-left reveal-left">
             <div className="section-tag" style={{ background: "rgba(196,160,120,0.12)", color: "rgba(196,160,120,0.9)" }}>Made With Purpose</div>
-            <h2>Craft That <em>Gives Back</em><br />More Than It Takes.</h2>
-            <p>Responsibility isn&apos;t a brand value we display on a website. It&apos;s embedded in every material we choose, every wage we pay, and every process we run. Your clients can feel the difference — even if they can&apos;t always name it.</p>
+            <h2>Every Piece Carries<br /><em>the Weight of How It Was Made.</em></h2>
+            <p>The best work doesn&apos;t just look right — it is right. Every material, every wage, every process at The Owl Artisans is held to a standard that most in this industry don&apos;t bother with. Your clients will sense it. They may not always name it — but they will feel the difference.</p>
             <a href="#order-now" className="btn-primary">Work With Us</a>
           </div>
           <div className="reveal-right">
             <div className="sustain-pillars">
               {[
-                { n: "1", t: "Natural & Recycled Materials", d: "New Zealand wool, cotton, jute, denim and viscose — materials selected for quality, provenance and environmental integrity." },
-                { n: "2", t: "Fair Artisan Wages", d: "Every maker in our network earns a fair living wage. We are GPTW certified — one of the few manufacturers in our industry to hold it." },
-                { n: "3", t: "Zero-Waste Production Goals", d: "Waste reduction targets and responsible water use are built into our factory operations as standard practice, not as an afterthought." },
-                { n: "4", t: "Transparent Supply Chain", d: "We offer factory visits and open-door inspection policies for every partner. You should know exactly where your pieces come from." },
+                { n: "1", t: "Responsible Materials", d: "Natural wool, cotton, jute, denim and viscose — each selected for quality, provenance and integrity. Nothing we use is chosen by default." },
+                { n: "2", t: "Fair Artisan Wages", d: "Every maker in our network earns above a fair living wage. We are GPTW certified — one of the very few manufacturers in our industry who can say that." },
+                { n: "3", t: "Considered Production", d: "Waste reduction and responsible water use are built into our operations from day one — not retrofitted as a marketing afterthought." },
+                { n: "4", t: "Full Transparency", d: "We invite factory visits and hold an open-door inspection policy at every stage. You should know exactly where your pieces come from. So should your clients." },
               ].map(({ n, t, d }) => (
                 <div key={n} className="pillar">
                   <div className="pillar-icon" style={{ fontFamily: "'Playfair Display',serif", fontSize: "18px", fontWeight: 700, color: "rgba(196,160,120,0.9)" }}>{n}</div>
@@ -222,15 +222,15 @@ export default function Home() {
       {/* FAQ */}
       <section className="faq" id="faq">
         <div className="faq-inner">
-          <h2 className="reveal">Questions We<br />Actually Get Asked.</h2>
+          <h2 className="reveal">Questions Designers<br />Actually Ask Us.</h2>
           {[
-            { q: "Do you have minimum order quantities?", a: "No — and this is intentional. Whether you are sourcing a single statement piece for a residential project or furnishing an entire hotel, we work to your scale. There are no minimums, no exceptions." },
-            { q: "How long does production take?", a: "Production typically takes 12–15 weeks from order confirmation, depending on the product and level of customisation. Rush timelines can sometimes be accommodated — share your project schedule and we will tell you honestly what is possible." },
-            { q: "Can I create completely custom pieces for a project?", a: "Yes. Custom work is a significant part of what we do. Bring us your specifications — dimensions, materials, colourways, construction details — and our design team will work directly with the artisans. We have produced bespoke pieces for residential interiors, hotels, branded retail environments and private collections." },
-            { q: "What does a long-term studio partnership look like?", a: "Our studio partners receive priority production scheduling, dedicated account management, preferential pricing on repeat orders and early access to new collections. Partnerships are built over time — most of our studio relationships begin with a single project and grow from there." },
-            { q: "Can I present these pieces under my own brand?", a: "Absolutely. Our private label programme allows you to present pieces under your studio brand entirely — custom packaging, swing tags, certificates of authenticity and labels. Available from USD 250, and complimentary on orders above USD 10,000." },
-            { q: "What materials do you work with?", a: "New Zealand wool, cotton, jute, denim and viscose — all selected for quality, sustainability and tactile integrity. We can also source specialist materials for bespoke projects where the brief demands something specific." },
-            { q: "Do you support third-party quality inspections?", a: "We actively encourage them. Our factories operate an open-door policy at every stage of production. If you or your client require independent quality verification, we will facilitate it without friction." },
+            { q: "Do you have minimum order quantities?", a: "No — and that is entirely deliberate. Whether you are sourcing one considered piece for a residential client or outfitting a full commercial project, we work to your brief, not a minimum. There are no exceptions because there shouldn't be." },
+            { q: "How long does production take?", a: "Typically 12–15 weeks from order confirmation, depending on the category and the level of customisation involved. If your project is working to a tight handover, tell us early. We will give you an honest answer — not an optimistic one." },
+            { q: "Can I create custom pieces for a project?", a: "Yes — and it is a significant part of what we do. Share your specifications: dimensions, materials, colourways, construction references. Our team works directly with the artisans to bring it to life. We have made bespoke pieces for private residences, hospitality projects, branded retail and private collections." },
+            { q: "What does working with you long-term look like?", a: "Studio partners receive priority scheduling, a dedicated point of contact, preferential pricing on repeat orders and first access to new collections before they are broadly released. Most of our strongest relationships started with one project and built from there." },
+            { q: "Can my clients see my brand, not yours?", a: "That is the point of our private label programme. Custom packaging, swing tags and authenticity certificates let your clients experience the work as entirely yours. Available from USD 250 — and complimentary on orders above USD 10,000." },
+            { q: "What materials do you work with?", a: "Natural wool, cotton, jute, denim and viscose — selected for quality, sustainability and the way they feel in hand. For bespoke projects where the brief calls for something specific, we can source and evaluate materials outside our standard range." },
+            { q: "Can we visit the factory or inspect production?", a: "We welcome it. Our factories operate an open-door policy at every stage — and we actively encourage partners and their clients to come and see how the work is made. If you prefer third-party inspection, we will facilitate it without friction." },
           ].map(({ q, a }, i) => (
             <div key={q} className={`faq-item reveal delay-${Math.min(i + 1, 5)}`} onClick={(e) => toggleFaq(e.currentTarget)}>
               <div className="faq-q">{q}<div className="faq-icon">+</div></div>
@@ -242,9 +242,9 @@ export default function Home() {
 
       {/* FINAL CTA */}
       <section className="final-cta">
-        <div className="section-tag reveal">Certifiably Reliable</div>
-        <h2 className="reveal delay-1">The Standard Your<br /><em>Projects Deserve.</em></h2>
-        <p className="reveal delay-2">GPTW certified. Ethically manufactured. Built for design professionals who cannot afford to compromise on quality, provenance or reliability.</p>
+        <div className="section-tag reveal">For Studios That Care About the Detail</div>
+        <h2 className="reveal delay-1">The Partner Your<br /><em>Clients Will Thank You For.</em></h2>
+        <p className="reveal delay-2">GPTW certified. Ethically manufactured. No minimums. Designed around how serious studios actually work — because your reputation is attached to every piece you specify.</p>
         <a href="#order-now" className="btn-dark reveal delay-3">Begin a Conversation</a>
       </section>
 
