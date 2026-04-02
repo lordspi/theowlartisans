@@ -4,7 +4,13 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "The Owl Artisans | Handcrafted Indian Home Fashion",
   description: "Direct from our ateliers in India to your most ambitious projects — handcrafted textiles and decor with no minimums, no middlemen.",
-  icons: { icon: "/favicon.png" },
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
