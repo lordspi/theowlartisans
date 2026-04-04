@@ -76,7 +76,7 @@ export default function Home() {
 
       {/* HERO */}
       <section className="hero" id="home">
-        <div className="hero-bg" style={{ backgroundImage: "url('/hero.png')" }} />
+        <div className="hero-bg" style={{ backgroundImage: "url('/hero.jpg')" }} />
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-eyebrow"><span></span>Exclusively for Interior Designers &amp; Architects</div>
@@ -177,10 +177,10 @@ export default function Home() {
         </div>
         <div className="perks-grid">
           {[
-            { n: "01", t: "Logistics, Handled", p: "From our atelier to your project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces arrive on your timeline, not ours.", img: "/logistic.png" },
-            { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our studio before it ships — at no extra cost. Presentation-ready images for proposals, mood boards and client decks. No chasing. No waiting.", img: "/product-photography.png" },
-            { n: "03", t: "The Story Behind Every Piece", p: "Artisan profiles, process footage, origin context — the provenance that turns a sourced piece into a conversation. Clients who know how something was made value it differently. So do theirs.", img: "/content.png" },
-            { n: "04", t: "Your Name on Everything", p: "Present entirely under your studio brand. Custom packaging, swing tags and authenticity certificates — your clients experience your curation, your eye, your standards. We stay invisible, by design.", img: "/custom-branding.png" },
+            { n: "01", t: "Logistics, Handled", p: "From our atelier to your project site — we manage freight, customs clearance and last-mile coordination end to end. We work with your nominated forwarders too. Your pieces arrive on your timeline, not ours.", img: "/logistic.jpg" },
+            { n: "02", t: "Photography, Always Included", p: "Every piece is photographed in our studio before it ships — at no extra cost. Presentation-ready images for proposals, mood boards and client decks. No chasing. No waiting.", img: "/product-photography.jpg" },
+            { n: "03", t: "The Story Behind Every Piece", p: "Artisan profiles, process footage, origin context — the provenance that turns a sourced piece into a conversation. Clients who know how something was made value it differently. So do theirs.", img: "/content.jpg" },
+            { n: "04", t: "Your Name on Everything", p: "Present entirely under your studio brand. Custom packaging, swing tags and authenticity certificates — your clients experience your curation, your eye, your standards. We stay invisible, by design.", img: "/custom-branding.jpg" },
           ].map(({ n, t, p, img }, i) => (
             <div key={n} className={`perk-card reveal delay-${i + 1}`}>
               <Image src={img} alt={t} width={600} height={300} className="perk-card-img" style={{width:"100%",objectFit:"cover"}} loading="lazy" />
@@ -251,7 +251,7 @@ export default function Home() {
 
       {/* ORDER FORM */}
       <section className="order" id="order-now">
-        <div className="order-bg" style={{ backgroundImage: "url('/behind-form.png')" }} />
+        <div className="order-bg" style={{ backgroundImage: "url('/behind-form.jpg')" }} />
         <div className="order-inner reveal" style={{ position: "relative", zIndex: 1 }}>
           <div className="section-tag">Work With Us</div>
           <h2>Tell Us About Your Project</h2>
@@ -283,7 +283,7 @@ export default function Home() {
       <div className="logo-scroller">
         <div className="logo-track">
           {[...Array(2)].map((_, d) =>
-            ["/logo1.png","/logo2.png","/logo3.png","/logo4.png","/logo5.png","/logo6.png","/logo8.png","/logo9.png"].map((src) => (
+            ["/logo1.jpg","/logo2.jpg","/logo3.jpg","/logo4.jpg","/logo5.jpg","/logo6.jpg","/logo8.jpg","/logo9.jpg"].map((src) => (
               <div key={`${d}-${src}`} className="logo-item">
                 <Image src={src} alt="Partner" width={160} height={60} className="logo-img" style={{objectFit:"contain"}} loading="lazy" />
               </div>
