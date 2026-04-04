@@ -195,6 +195,11 @@ footer{padding:60px 60px 36px;background:#faf7f4;border-top:1px solid rgba(44,24
   .hero-content,.sourcing,.products,.process,.perks,.sustain,.faq,.final-cta,.order{padding-left:24px;padding-right:24px}
   .hero h1{font-size:40px}
   .stats-inner{grid-template-columns:1fr 1fr}
+  .stat{padding:28px 12px}
+  .stat-num,.stat-text{font-size:34px}
+  .stat-label{font-size:9px;letter-spacing:0.08em}
+  .stat-sub{font-size:9px}
+  .stats{padding:40px 16px}
   .products-grid,.steps,.perks-grid,.sustain-inner,.form-row{grid-template-columns:1fr}
   .footer-top{flex-direction:column}
   .footer-links-cols{flex-wrap:wrap;gap:32px}
